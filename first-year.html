@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano do Primeiro Ano - CodeForge Soluções</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+
+    <div id="menu-container"></div>
+
+    <div class="container mx-auto p-4 md:p-8 text-gray-800">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 text-white">Plano do Primeiro Ano: Roteiro para o Sucesso</h1>
+            <p class="text-lg md:text-xl" style="color: #08BDBA;">Metas, Projeções e Estratégia da CodeForge Soluções</p>
+        </header>
+
+        <main>
+            <section id="metas" class="mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Metas Principais para o Ano 1</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Definimos três pilares quantificáveis para guiar nosso primeiro ano. Estes são os alvos que direcionarão nossos esforços em vendas, entrega e crescimento da equipe.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-2xl p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #7759C0;">Faturamento Bruto</h3>
+                        <p class="text-5xl font-black" style="color: #F15946;">R$ 480K</p>
+                        <p class="text-gray-500 mt-2">Meta de receita total ao final dos primeiros 12 meses de operação.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-2xl p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #7759C0;">Clientes Atendidos</h3>
+                        <p class="text-5xl font-black" style="color: #F15946;">10</p>
+                        <p class="text-gray-500 mt-2">Construir uma base sólida de clientes com projetos bem-sucedidos.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-2xl p-6 text-center">
+                        <h3 class="text-xl font-semibold mb-2" style="color: #7759C0;">Projetos Concluídos</h3>
+                        <p class="text-5xl font-black" style="color: #F15946;">12</p>
+                        <p class="text-gray-500 mt-2">Entregar no mínimo um projeto por mês, garantindo a qualidade e o prazo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="financeiro" class="mb-16 bg-white rounded-lg shadow-2xl p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2" style="color: #242F40;">Projeção Financeira: Receita vs. Custos</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">Este gráfico traça nossa jornada financeira mês a mês. O objetivo é cruzar a linha dos custos operacionais e atingir o ponto de equilíbrio (break-even) por volta do sétimo mês, pavimentando o caminho para a lucratividade.</p>
+                </div>
+                <div class="chart-container" style="max-width: 900px;">
+                    <canvas id="financeiroChart"></canvas>
+                </div>
+            </section>
+
+            <section id="aquisicao" class="mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-2xl p-6 md:p-8 order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold text-center mb-4" style="color: #242F40;">Canais de Aquisição de Clientes</h3>
+                        <p class="text-center text-gray-600 mb-6">Nossa estratégia de crescimento não depende de uma única fonte. A prospecção será diversificada, com forte ênfase em construir relacionamentos (Networking) e demonstrar nossa expertise (Marketing de Conteúdo).</p>
+                        <div class="chart-container" style="height: 300px; max-height: 300px;">
+                            <canvas id="aquisicaoChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-white order-1 lg:order-2">
+                        <h2 class="text-3xl font-bold mb-4">Como Alcançaremos as Metas?</h2>
+                        <p class="text-lg mb-4 text-gray-300">Atingir um faturamento de R$ 480k requer uma estratégia de aquisição de clientes robusta e multifacetada. Não vamos esperar os clientes baterem à nossa porta.</p>
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-start"><span class="text-xl mr-3" style="color: #F9C22E;">🤝</span> <strong>Networking Ativo:</strong> Participação em eventos de tecnologia e negócios para criar conexões valiosas.</li>
+                            <li class="flex items-start"><span class="text-xl mr-3" style="color: #F9C22E;">✍️</span> <strong>Marketing de Conteúdo:</strong> Publicação de artigos e estudos de caso que demonstram nossa capacidade técnica.</li>
+                            <li class="flex items-start"><span class="text-xl mr-3" style="color: #F9C22E;">📣</span> <strong>Anúncios Direcionados:</strong> Campanhas de baixo custo em plataformas como LinkedIn para atingir decisores em nichos específicos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="roadmap" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Roadmap do Primeiro Ano</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">A jornada será dividida em quatro trimestres, cada um com focos e metas claras para garantir um progresso constante e estruturado.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-xl" style="color: #08BDBA;">1º Trimestre</h3>
+                        <p class="text-gray-300">Lançamento oficial. Aquisição dos primeiros 2 clientes. Contratação do primeiro DEV Pleno. Setup de processos ágeis.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-xl" style="color: #08BDBA;">2º Trimestre</h3>
+                        <p class="text-gray-300">Entrega dos primeiros projetos. Publicação de 2 estudos de caso. Contratação de um Designer UI/UX. Atingir 4 clientes na base.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-xl" style="color: #08BDBA;">3º Trimestre</h3>
+                        <p class="text-gray-300">Alcançar o ponto de equilíbrio (break-even). Expandir a equipe com mais um DEV Sênior. Iniciar prospecção ativa de projetos maiores.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="font-bold text-xl" style="color: #08BDBA;">4º Trimestre</h3>
+                        <p class="text-gray-300">Consolidar a lucratividade. Bater a meta de R$ 480k de faturamento e 10 clientes. Planejamento estratégico para o Ano 2.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="projetos" class="mb-16 bg-white rounded-lg shadow-2xl p-6 md:p-8">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-2" style="color: #242F40;">Mix de Projetos Planejado</h2>
+                    <p class="max-w-3xl mx-auto text-gray-600">Para mitigar riscos e otimizar o fluxo de caixa, buscaremos um portfólio de projetos diversificado. Projetos menores garantem receita rápida, enquanto projetos médios e grandes constroem nossa reputação e garantem estabilidade a longo prazo.</p>
+                </div>
+                <div class="chart-container" style="max-width: 800px; height: 320px;">
+                    <canvas id="projetosChart"></canvas>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-600">
+            <p class="text-gray-400">Um plano é o mapa, mas a execução é a jornada.</p>
+            <p class="text-sm text-gray-500">CodeForge Soluções - Ano 1.</p>
+        </footer>
+    </div>
+
+    <script>
+        const energeticPalette = {
+            teal: '#08BDBA',
+            orangeRed: '#F15946',
+            yellow: '#F9C22E',
+            purple: '#7759C0',
+            darkBlue: '#242F40'
+        };
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+        const receitaData = [5, 15, 20, 35, 40, 45, 55, 60, 65, 70, 75, 80];
+        const custosData = [30, 30, 32, 35, 38, 40, 42, 42, 45, 45, 48, 50];
+        const financeiroCtx = document.getElementById('financeiroChart').getContext('2d');
+        new Chart(financeiroCtx, {
+            type: 'line',
+            data: {
+                labels: meses,
+                datasets: [{
+                    label: 'Receita (em milhares de R$)',
+                    data: receitaData,
+                    borderColor: energeticPalette.teal,
+                    backgroundColor: energeticPalette.teal + '33',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Custos Operacionais (em milhares de R$)',
+                    data: custosData,
+                    borderColor: energeticPalette.orangeRed,
+                    backgroundColor: energeticPalette.orangeRed + '33',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: value => `R$${value}k` }
+                    }
+                }
+            }
+        });
+        
+        const aquisicaoCtx = document.getElementById('aquisicaoChart').getContext('2d');
+        new Chart(aquisicaoCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Networking e Indicações', 'Marketing de Conteúdo', 'Prospecção Ativa (Outbound)', 'Anúncios Pagos'],
+                datasets: [{
+                    label: 'Origem dos Clientes',
+                    data: [45, 25, 20, 10],
+                    backgroundColor: [
+                        energeticPalette.teal,
+                        energeticPalette.purple,
+                        energeticPalette.yellow,
+                        energeticPalette.orangeRed,
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const projetosCtx = document.getElementById('projetosChart').getContext('2d');
+        new Chart(projetosCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Projetos Pequenos (Até R$20k)', 'Projetos Médios (R$20k - R$60k)', 'Projetos Grandes (> R$60k)'],
+                datasets: [{
+                    label: 'Quantidade de Projetos Planejada',
+                    data: [5, 5, 2],
+                     backgroundColor: [
+                        energeticPalette.teal,
+                        energeticPalette.purple,
+                        energeticPalette.orangeRed
+                    ],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 1 }
+                    }
+                }
+            }
+        });
+
+        // Carregar menu componentizado
+        fetch('menu.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('menu-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvendando a Precificação de Software: Um Guia para Software Houses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remova ou comente o style interno para evitar conflito com style.css */
+        /*
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #242F40;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 380px;
+            max-height: 450px;
+        }
+        .flow-step {
+            border-color: #7759C0;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #F15946;
+            line-height: 1;
+        }
+        */
+    </style>
+</head>
+<body class="bg-dark">
+    <div id="menu-container"></div>
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 text-white">Desvendando a Precificação de Software</h1>
+            <p class="text-lg md:text-xl text-primary">Um Guia Estratégico para Software Houses</p>
+        </header>
+        <main>
+            <section id="pilares" class="mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Os 3 Pilares da Precificação</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Precificar não é apenas chutar um número. É um balanço estratégico entre o que custa para fazer, o que o mercado está disposto a pagar e o valor real que sua solução entrega ao cliente.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card text-center border-t-4" style="border-color: #08BDBA;">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold mb-2 text-primary">Custo (Cost-Plus)</h3>
+                        <p class="text-gray-300">O ponto de partida. Calcule todas as despesas (salários, impostos, ferramentas, aluguel) e adicione sua margem de lucro. Garante que você não terá prejuízo.</p>
+                    </div>
+                    <div class="card text-center border-t-4" style="border-color: #F15946;">
+                        <div class="text-5xl mb-4">⭐</div>
+                        <h3 class="text-xl font-bold mb-2 text-secondary">Valor (Value-Based)</h3>
+                        <p class="text-gray-300">O foco no cliente. O preço é baseado no retorno sobre o investimento (ROI), economia de custos ou ganhos de eficiência que o software trará para o negócio do cliente.</p>
+                    </div>
+                    <div class="card text-center border-t-4" style="border-color: #F9C22E;">
+                        <div class="text-5xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold mb-2 text-accent">Mercado (Competition-Based)</h3>
+                        <p class="text-gray-300">O olhar para a concorrência. Analise o que outras software houses cobram por projetos similares. Essencial para se posicionar de forma competitiva no seu nicho.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="modelos" class="mb-16 bg-white rounded-lg p-8 shadow-lg">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2 text-purple">Principais Modelos de Precificação</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Cada projeto é único. Escolher o modelo de precificação correto alinha as expectativas do cliente com a realidade do desenvolvimento e os objetivos da sua empresa.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card">
+                        <h3 class="text-2xl font-bold mb-3 text-purple">Escopo Fechado (Fixed Price)</h3>
+                        <p class="mb-4 text-gray-300">Um preço fixo para um escopo de trabalho detalhadamente definido. O cliente sabe exatamente quanto vai pagar.</p>
+                        <p class="font-semibold text-green-400">Ideal para: Projetos com requisitos muito claros e pouco prováveis de mudar (Ex: Landing Pages, sites institucionais).</p>
+                        <p class="font-semibold text-red-400 mt-2">Risco: Qualquer mudança no escopo (scope creep) pode levar a prejuízos se não for bem gerenciada com aditivos contratuais.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold mb-3 text-purple">Tempo e Materiais (Time and Materials)</h3>
+                        <p class="mb-4 text-gray-300">O cliente paga pelas horas efetivamente trabalhadas pela equipe, mais os custos de materiais (licenças, serviços de nuvem).</p>
+                        <p class="font-semibold text-green-400">Ideal para: Projetos ágeis, de longa duração ou com escopo incerto, onde a flexibilidade é chave (Ex: Desenvolvimento de um novo produto complexo).</p>
+                        <p class="font-semibold text-red-400 mt-2">Risco: O cliente pode ter receio de um "cheque em branco". Requer transparência total e relatórios de progresso constantes.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold mb-3 text-purple">Retainer (Iguala Mensal)</h3>
+                        <p class="mb-4 text-gray-300">O cliente paga uma taxa mensal fixa por um banco de horas ou por acesso contínuo à equipe para manutenção e novas funcionalidades.</p>
+                        <p class="font-semibold text-green-400">Ideal para: Suporte contínuo, manutenção de sistemas legados e melhorias incrementais em produtos já lançados.</p>
+                        <p class="font-semibold text-red-400 mt-2">Risco: É preciso definir claramente o que está incluso para evitar sobrecarga da equipe e insatisfação do cliente.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-2xl font-bold mb-3 text-purple">Baseado em Valor (Value-Based)</h3>
+                        <p class="mb-4 text-gray-300">O preço é uma porcentagem do valor que o software gera para o cliente. Ex: "Este software vai te economizar R$ 500k/ano, então nosso preço é R$ 100k".</p>
+                        <p class="font-semibold text-green-400">Ideal para: Projetos com ROI claro e mensurável, onde sua solução tem um impacto direto e significativo no negócio do cliente.</p>
+                        <p class="font-semibold text-red-400 mt-2">Risco: O mais difícil de negociar. Exige uma compreensão profunda do negócio do cliente e dados para comprovar o valor.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="processo" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Processo de Cálculo em 5 Passos</h2>
+                     <p class="max-w-3xl mx-auto text-gray-300">Siga um processo estruturado para chegar a um preço justo e lucrativo.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="card border-2 border-purple font-semibold text-center w-52 h-28 flex items-center justify-center">1. Levantamento Detalhado de Requisitos</div>
+                    <div class="flow-arrow hidden md:block text-secondary">&rightarrow;</div>
+                    <div class="flow-arrow md:hidden text-secondary">&downarrow;</div>
+                    <div class="card border-2 border-purple font-semibold text-center w-52 h-28 flex items-center justify-center">2. Estimativa de Horas por Tarefa (com Buffer de 20%)</div>
+                    <div class="flow-arrow hidden md:block text-secondary">&rightarrow;</div>
+                    <div class="flow-arrow md:hidden text-secondary">&downarrow;</div>
+                    <div class="card border-2 border-purple font-semibold text-center w-52 h-28 flex items-center justify-center">3. Cálculo do Custo Base (Horas x Custo/Hora)</div>
+                    <div class="flow-arrow hidden md:block text-secondary">&rightarrow;</div>
+                    <div class="flow-arrow md:hidden text-secondary">&downarrow;</div>
+                    <div class="card border-2 border-purple font-semibold text-center w-52 h-28 flex items-center justify-center">4. Aplicação da Margem de Lucro (25% a 50%)</div>
+                    <div class="flow-arrow hidden md:block text-secondary">&rightarrow;</div>
+                    <div class="flow-arrow md:hidden text-secondary">&downarrow;</div>
+                    <div class="card font-semibold text-center w-52 h-28 flex items-center justify-center" style="background: linear-gradient(90deg,#08BDBA,#7759C0); color: #fff; border: none;">5. Preço Final (Análise de Valor e Mercado)</div>
+                </div>
+            </section>
+            <section id="valores" class="mb-16 bg-white rounded-lg p-8 shadow-lg">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-purple">Valores de Referência no Mercado Brasileiro (2025)</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Estes valores são estimativas e podem variar conforme a região, tecnologia e reputação da sua empresa. Use-os como um guia para se posicionar.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-center mb-6 text-purple">Valor da Hora por Senioridade</h3>
+                        <div class="chart-container" style="height: 320px;">
+                            <canvas id="valorHoraChart"></canvas>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="text-2xl font-bold text-center mb-6 text-purple">Preço de Projeto por Complexidade</h3>
+                        <div class="chart-container" style="height: 320px;">
+                            <canvas id="valorProjetoChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="fatores" class="mb-16">
+                 <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Fatores que Influenciam o Preço Final</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Além do escopo, diversos fatores podem justificar um preço mais alto ou mais baixo.</p>
+                </div>
+                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                    <div class="card p-4">
+                        <p class="font-bold text-primary">Stack de Tecnologia</p>
+                        <p class="text-sm text-gray-300">Tecnologias mais raras ou complexas custam mais.</p>
+                    </div>
+                    <div class="card p-4">
+                        <p class="font-bold text-primary">Integrações</p>
+                         <p class="text-sm text-gray-300">Conectar com sistemas de terceiros adiciona complexidade.</p>
+                    </div>
+                    <div class="card p-4">
+                        <p class="font-bold text-primary">Prazo de Entrega</p>
+                        <p class="text-sm text-gray-300">Projetos urgentes exigem alocação prioritária e custam mais caro.</p>
+                    </div>
+                    <div class="card p-4">
+                        <p class="font-bold text-primary">Suporte e Manutenção</p>
+                         <p class="text-sm text-gray-300">Níveis de serviço (SLA) mais altos agregam valor.</p>
+                    </div>
+                     <div class="card p-4">
+                        <p class="font-bold text-primary">Reputação da Empresa</p>
+                        <p class="text-sm text-gray-300">Empresas estabelecidas com portfólio forte podem cobrar mais.</p>
+                    </div>
+                     <div class="card p-4">
+                        <p class="font-bold text-primary">Propriedade Intelectual</p>
+                        <p class="text-sm text-gray-300">O cliente deterá 100% do código-fonte?</p>
+                    </div>
+                      <div class="card p-4">
+                        <p class="font-bold text-primary">Complexidade do UI/UX</p>
+                        <p class="text-sm text-gray-300">Designs elaborados e animações demandam mais tempo.</p>
+                    </div>
+                       <div class="card p-4">
+                        <p class="font-bold text-primary">Requisitos de Segurança</p>
+                        <p class="text-sm text-gray-300">Conformidade com LGPD, testes de invasão, etc.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="text-center mt-12 pt-8 border-t border-gray-600">
+            <p class="text-gray-400 font-semibold">Precificar é uma ciência e uma arte.</p>
+            <p class="text-sm text-gray-500">Use este guia para construir propostas de valor, ser transparente com seus clientes e garantir a lucratividade da sua software house.</p>
+        </footer>
+    </div>
+    <script>
+        const energeticPalette = {
+            teal: '#08BDBA',
+            orangeRed: '#F15946',
+            yellow: '#F9C22E',
+            purple: '#7759C0',
+            darkBlue: '#242F40'
+        };
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const valorHoraCtx = document.getElementById('valorHoraChart').getContext('2d');
+        new Chart(valorHoraCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Júnior', 'Pleno', 'Sênior / Especialista'],
+                datasets: [
+                {
+                    label: 'Valor Mínimo (R$/h)',
+                    data: [50, 90, 150],
+                    backgroundColor: energeticPalette.teal,
+                    borderRadius: 5,
+                    borderWidth: 1,
+                    borderColor: '#fff'
+                },
+                {
+                    label: 'Valor Máximo (R$/h)',
+                    data: [90, 150, 250],
+                    backgroundColor: energeticPalette.purple,
+                    borderRadius: 5,
+                     borderWidth: 1,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: { 
+                         callbacks: { title: tooltipTitleCallback } 
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { callback: value => `R$${value}` }
+                    }
+                }
+            }
+        });
+
+        const valorProjetoCtx = document.getElementById('valorProjetoChart').getContext('2d');
+        new Chart(valorProjetoCtx, {
+            type: 'bar',
+            data: {
+                labels: ['MVP / Projeto Simples', 'Projeto Médio Porte', 'Projeto Grande / Enterprise'],
+                datasets: [{
+                    label: 'Faixa de Preço (em milhares de R$)',
+                    data: [35, 150, 300],
+                    backgroundColor: [
+                       energeticPalette.teal,
+                       energeticPalette.purple,
+                       energeticPalette.orangeRed,
+                    ],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { 
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                let value = context.parsed.x;
+                                if (context.dataIndex === 0) return `R$ 15k - R$ 50k`;
+                                if (context.dataIndex === 1) return `R$ 50k - R$ 250k`;
+                                if (context.dataIndex === 2) return `Acima de R$ 250k`;
+                                return `R$ ${value}k`;
+                            }
+                        }
+                    }
+                },
+                 scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: { callback: value => `R$${value}k` }
+                    }
+                }
+            }
+        });
+
+        // Carregar menu componentizado
+        fetch('menu.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('menu-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

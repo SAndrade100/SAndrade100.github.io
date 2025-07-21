@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia para Abrir uma Software House: Custos e Estratégia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+
+    <div id="menu-container"></div>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 text-white">Guia para Abrir sua Software House</h1>
+            <p class="text-lg md:text-xl text-primary">Análise de Custos, Estratégias e Desafios no Mercado Brasileiro.</p>
+        </header>
+
+        <main>
+            <section id="custos" class="mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Decomposição de Custos</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Entender os custos é o primeiro passo para um planejamento financeiro sólido. Dividimos os gastos em duas categorias principais: o investimento inicial para começar e os custos operacionais recorrentes para manter a empresa funcionando.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center lg:col-span-1">
+                        <h3 class="text-xl font-bold mb-2 text-purple">Investimento Inicial (Médio)</h3>
+                        <p class="text-5xl font-black text-pink">R$ 15.000</p>
+                        <p class="text-gray-500 mt-2">Cobre a formalização, equipamentos básicos e setup inicial. Varia com o modelo (remoto vs. presencial).</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center lg:col-span-1">
+                         <h3 class="text-xl font-bold mb-2 text-purple">Custo Operacional Mensal (Pequeno Porte)</h3>
+                        <p class="text-5xl font-black text-yellow">R$ 25.000</p>
+                        <p class="text-gray-500 mt-2">Estimativa para uma equipe enxuta (2-3 DEVs), incluindo salários, ferramentas e marketing inicial.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 lg:col-span-1">
+                        <h3 class="text-xl font-bold text-center mb-4 text-purple">Proporção dos Custos Operacionais</h3>
+                        <div class="chart-container" style="height: 260px; max-height: 260px;">
+                            <canvas id="custosOperacionaisChart"></canvas>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 mt-4">A folha de pagamento é, de longe, o maior custo recorrente, destacando a importância da gestão de talentos.</p>
+                    </div>
+
+                     <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6 mt-8">
+                        <h3 class="text-2xl font-bold text-center mb-6 text-purple">Análise Detalhada do Investimento Inicial</h3>
+                        <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Os custos para dar o pontapé inicial podem ser divididos em categorias essenciais. Enquanto a formalização é um custo fixo, os gastos com hardware e software podem variar drasticamente dependendo da escala e da especialização da sua equipe.</p>
+                        <div class="chart-container" style="max-width: 800px;">
+                            <canvas id="investimentoInicialChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="estrategia" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Pontos Chave da Estratégia</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Além do dinheiro, o sucesso depende de decisões estratégicas inteligentes. Focar nestes pilares desde o início pode definir o rumo da sua empresa e criar uma base sólida para o crescimento sustentável.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold mb-2 text-purple">Nicho de Mercado</h3>
+                        <p class="text-gray-600">Não tente servir a todos. Especializar-se em um setor (ex: fintech, saúde, agronegócio) ou tecnologia (ex: IA, Mobile) cria autoridade, diferenciação e atrai clientes qualificados.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🏢</div>
+                        <h3 class="text-xl font-bold mb-2 text-purple">Modelo de Negócio</h3>
+                        <p class="text-gray-600">Será uma fábrica de software (projetos sob demanda) ou você desenvolverá um produto próprio (SaaS)? A escolha impacta o fluxo de caixa, o ciclo de vendas e a escalabilidade.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold mb-2 text-purple">Planejamento Financeiro</h3>
+                        <p class="text-gray-600">Defina sua precificação (hora, projeto, retainer), projete o fluxo de caixa e garanta capital de giro para cobrir despesas por pelo menos 6 meses, mitigando riscos iniciais.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2 text-purple">Vendas e Marketing</h3>
+                        <p class="text-gray-600">Como você encontrará seus primeiros clientes? Crie um plano de prospecção. Invista em um portfólio sólido, networking e marketing de conteúdo para gerar autoridade e leads.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="jornada" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Jornada do Empreendedor de Software</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Abrir uma software house é um processo com etapas bem definidas. Este fluxograma simplifica a jornada, desde a concepção da ideia até a entrega do primeiro projeto e o início do ciclo de crescimento.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flowchart-step rounded-lg p-4 font-semibold text-center w-48 h-24 flex items-center justify-center">1. Ideia & Plano de Negócios</div>
+                    <div class="flowchart-arrow hidden md:block">&rightarrow;</div>
+                    <div class="flowchart-arrow md:hidden">&downarrow;</div>
+                    <div class="flowchart-step rounded-lg p-4 font-semibold text-center w-48 h-24 flex items-center justify-center">2. Formalização & Setup Legal</div>
+                    <div class="flowchart-arrow hidden md:block">&rightarrow;</div>
+                     <div class="flowchart-arrow md:hidden">&downarrow;</div>
+                    <div class="flowchart-step rounded-lg p-4 font-semibold text-center w-48 h-24 flex items-center justify-center">3. Montagem da Equipe & Ferramentas</div>
+                    <div class="flowchart-arrow hidden md:block">&rightarrow;</div>
+                     <div class="flowchart-arrow md:hidden">&downarrow;</div>
+                    <div class="flowchart-step rounded-lg p-4 font-semibold text-center w-48 h-24 flex items-center justify-center">4. Prospecção & 1º Cliente</div>
+                     <div class="flowchart-arrow hidden md:block">&rightarrow;</div>
+                     <div class="flowchart-arrow md:hidden">&downarrow;</div>
+                    <div class="flowchart-step rounded-lg p-4 font-semibold text-center w-48 h-24 flex items-center justify-center" style="background-color: #FFA600; color: white; border-color: #FFA600;">5. Entrega & Crescimento</div>
+                </div>
+            </section>
+            
+            <section id="desafios" class="mb-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Principais Desafios do Setor</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">O caminho tem obstáculos. Estar ciente dos desafios mais comuns permite que você se prepare e crie estratégias para superá-los, aumentando suas chances de sucesso a longo prazo.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="chart-container" style="max-width: 800px;">
+                        <canvas id="desafiosChart"></canvas>
+                    </div>
+                     <p class="text-sm text-center text-gray-500 mt-6">A dificuldade em encontrar e reter profissionais qualificados se destaca como o principal desafio, sublinhando a natureza competitiva e baseada em talentos do setor de tecnologia.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-600">
+            <p class="text-gray-400">Este infográfico é uma ferramenta de planejamento inicial.</p>
+            <p class="text-sm text-gray-500">Os valores são estimativas para o mercado brasileiro e podem variar. Consulte um contador e pesquise seu nicho. Boa sorte!</p>
+        </footer>
+    </div>
+
+    <script>
+        const brilliantBluesPalette = {
+            darkBlue: '#003F5C',
+            indigo: '#444E86',
+            purple: '#955196',
+            pink: '#DD5182',
+            orange: '#FF6E54',
+            yellow: '#FFA600'
+        };
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const custosOperacionaisCtx = document.getElementById('custosOperacionaisChart').getContext('2d');
+        new Chart(custosOperacionaisCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Folha de Pagamento', 'Ferramentas & Licenças', 'Marketing & Vendas', 'Custos Administrativos'],
+                datasets: [{
+                    label: 'Distribuição de Custos',
+                    data: [65, 15, 10, 10],
+                    backgroundColor: [
+                        brilliantBluesPalette.darkBlue,
+                        brilliantBluesPalette.indigo,
+                        brilliantBluesPalette.pink,
+                        brilliantBluesPalette.yellow,
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const investimentoInicialCtx = document.getElementById('investimentoInicialChart').getContext('2d');
+        new Chart(investimentoInicialCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Formalização da Empresa (Contador, Taxas)', 'Equipamentos (Notebooks, Monitores)', 'Licenças de Software (Anual)', 'Mobiliário e Setup (se presencial)'],
+                datasets: [{
+                    label: 'Custo Estimado (R$)',
+                    data: [3000, 8000, 2500, 1500],
+                    backgroundColor: [
+                        brilliantBluesPalette.darkBlue,
+                        brilliantBluesPalette.indigo,
+                        brilliantBluesPalette.purple,
+                        brilliantBluesPalette.pink,
+                    ],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) { return 'R$ ' + value / 1000 + 'k' }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                             font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const desafiosLabels = [
+            'Contratação e retenção de talentos',
+            'Concorrência acirrada no mercado',
+            'Aquisição e prospecção de clientes',
+            'Gestão financeira e fluxo de caixa',
+            'Inovação e atualização tecnológica'
+        ];
+
+        const desafiosCtx = document.getElementById('desafiosChart').getContext('2d');
+        new Chart(desafiosCtx, {
+            type: 'bar',
+            data: {
+                labels: desafiosLabels.map(label => wrapLabel(label)),
+                datasets: [{
+                    label: 'Nível de Impacto (0-10)',
+                    data: [9.5, 8.8, 8.5, 7.9, 7.2],
+                     backgroundColor: [
+                        brilliantBluesPalette.pink,
+                        brilliantBluesPalette.orange,
+                        brilliantBluesPalette.yellow,
+                        brilliantBluesPalette.indigo,
+                        brilliantBluesPalette.purple
+                    ],
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                     legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                 scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Carregar menu componentizado
+        fetch('menu.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('menu-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
+            }
+        });
+    </script>
+</body>
+</html>
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

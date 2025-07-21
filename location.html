@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Houses no Sudeste: Onde Crescer e Como Tributar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+
+    <div id="menu-container"></div>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-2">O Mapa da Software House no Sudeste</h1>
+            <p class="text-lg md:text-xl text-primary">Onde crescer, como tributar e os principais ecossistemas de inovação.</p>
+        </header>
+
+        <main>
+            <section id="hubs" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Principais Polos Tecnológicos do Sudeste</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">A região concentra os mais importantes ecossistemas de tecnologia do país, oferecendo infraestrutura, talentos e oportunidades de investimento.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card border-l-4" style="border-color: #ef4444;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🏙️ São Paulo (SP)</h3>
+                            <p class="text-gray-300 mt-2">A capital financeira e de startups do Brasil. Lidera com mais de 1.900 startups, oferecendo acesso incomparável a investimentos e um mercado gigante.</p>
+                        </div>
+                    </div>
+                    <div class="card border-l-4" style="border-color: #f97316;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🎓 Campinas (SP)</h3>
+                            <p class="text-gray-300 mt-2">Polo universitário e de P&D, impulsionado pela UNICAMP. Ideal para empresas que buscam inovação e talentos em engenharia e tecnologia.</p>
+                        </div>
+                    </div>
+                    <div class="card border-l-4" style="border-color: #eab308;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🚀 Belo Horizonte (MG)</h3>
+                            <p class="text-gray-300 mt-2">Lar do "San Pedro Valley", um dos ecossistemas mais dinâmicos e colaborativos do país, com um custo de vida competitivo e forte comunidade de startups.</p>
+                        </div>
+                    </div>
+                    <div class="card border-l-4" style="border-color: #22c55e;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🌊 Rio de Janeiro (RJ)</h3>
+                            <p class="text-gray-300 mt-2">Terceiro maior hub de startups, com forte presença acadêmica (UFRJ) e setores de óleo & gás e economia criativa. Grande potencial de mercado.</p>
+                        </div>
+                    </div>
+                    <div class="card border-l-4" style="border-color: #3b82f6;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🔬 São José dos Campos (SP)</h3>
+                            <p class="text-gray-300 mt-2">Centro de excelência em tecnologia aeroespacial e engenharia, ligado ao ITA. Atrai empresas de alta tecnologia e P&D de ponta.</p>
+                        </div>
+                    </div>
+                    <div class="card border-l-4" style="border-color: #8b5cf6;">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">🔌 Santa Rita do Sapucaí (MG)</h3>
+                            <p class="text-gray-300 mt-2">Conhecido como "Vale da Eletrônica", é um polo consolidado com forte tradição em eletrônica, IoT e formação técnica especializada.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="impostos" class="mb-20 bg-white rounded-lg p-8 shadow-lg">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-purple">Decifrando o Labirinto Tributário</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">A escolha do regime tributário é uma das decisões mais estratégicas para a saúde financeira da sua empresa. A maioria das software houses se enquadra como prestadora de serviços (sujeita ao ISS, não ao ICMS).</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full rounded-lg overflow-hidden card">
+                        <thead>
+                            <tr>
+                                <th class="bg-purple text-white">Regime Tributário</th>
+                                <th class="bg-purple text-white">Ideal Para (Faturamento Anual)</th>
+                                <th class="bg-purple text-white">Alíquotas Chave (Serviços)</th>
+                                <th class="bg-purple text-white">Ponto de Atenção</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold text-primary">Simples Nacional</td>
+                                <td class="text-gray-300">Até R$ 4,8 milhões</td>
+                                <td class="text-gray-300">A partir de 6% (Anexo III) ou 15,5% (Anexo V)</td>
+                                <td class="font-semibold text-red-400">Fator R: a alíquota depende do custo da sua folha de pagamento.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-primary">Lucro Presumido</td>
+                                <td class="text-gray-300">Até R$ 78 milhões</td>
+                                <td class="text-gray-300">~13,33% a 16,33% sobre o faturamento (federais + ISS)</td>
+                                <td class="font-semibold text-red-400">Base de cálculo é uma presunção de 32% sobre a receita.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-primary">Lucro Real</td>
+                                <td class="text-gray-300">Acima de R$ 78 milhões</td>
+                                <td class="text-gray-300">IRPJ (15%) e CSLL (9%) sobre o lucro real + PIS/COFINS</td>
+                                <td class="font-semibold text-red-400">Mais complexo, porém permite abater despesas para reduzir o imposto.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-8 p-6 bg-indigo-900 rounded-lg border-l-4 border-indigo-500">
+                    <h4 class="font-bold text-lg text-white">O que é o Fator R?</h4>
+                    <p class="text-gray-300 mt-2">No Simples Nacional, se os gastos da sua empresa com folha de pagamento (salários, pró-labore, encargos) forem <strong>iguais ou maiores que 28%</strong> do seu faturamento, ela se enquadra no Anexo III, com impostos menores (a partir de 6%). Caso contrário, vai para o Anexo V, com impostos bem mais altos (a partir de 15,5%). Planejamento é fundamental!</p>
+                </div>
+            </section>
+            
+            <section id="comparativo" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-white">Comparativo de Carga Tributária Anual</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">Simulação para uma software house com faturamento anual de R$ 1.200.000 e folha de pagamento de R$ 420.000 (35% da receita, qualificando-se para o Fator R).</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="taxComparisonChart"></canvas>
+                </div>
+            </section>
+            
+            <section id="incentivos" class="bg-white rounded-lg p-8 shadow-lg">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2 text-purple">Fique de Olho: Incentivos Fiscais</h2>
+                    <p class="max-w-3xl mx-auto text-gray-300">O Brasil oferece leis de incentivo que podem reduzir drasticamente seus impostos, desde que sua empresa invista em inovação.</p>
+                </div>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="bg-indigo-900 p-6 rounded-lg border border-indigo-700">
+                         <h3 class="font-bold text-xl text-primary">Lei do Bem (Nº 11.196/05)</h3>
+                         <p class="text-gray-300 mt-2">Para empresas no regime do Lucro Real, permite abater do imposto de renda despesas com Pesquisa, Desenvolvimento e Inovação Tecnológica (P&D&I). É um dos incentivos mais poderosos para o setor.</p>
+                     </div>
+                     <div class="bg-indigo-900 p-6 rounded-lg border border-indigo-700">
+                         <h3 class="font-bold text-xl text-primary">Lei de Informática (Nº 8.248/91)</h3>
+                         <p class="text-gray-300 mt-2">Concede redução de impostos (IPI, PIS/COFINS) para empresas que produzem bens de informática e telecomunicações e investem uma parte do faturamento em P&D no país.</p>
+                     </div>
+                 </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-20 pt-8 border-t border-gray-600">
+            <p class="text-gray-400 font-semibold">Decisões estratégicas baseadas em dados.</p>
+            <p class="text-sm text-gray-500">A escolha da cidade e do regime tributário definirá a competitividade e a lucratividade da sua software house. Consulte sempre um contador especializado.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const colorPalette = {
+            indigo: '#4f46e5',
+            amber: '#d97706',
+            emerald: '#10b981'
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const taxCtx = document.getElementById('taxComparisonChart').getContext('2d');
+        new Chart(taxCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Simples Nacional (Anexo III)', 'Lucro Presumido', 'Lucro Real'],
+                datasets: [{
+                    label: 'Imposto Anual Estimado (R$)',
+                    data: [135600, 163560, 99000],
+                    backgroundColor: [
+                        colorPalette.emerald,
+                        colorPalette.amber,
+                        colorPalette.indigo
+                    ],
+                    borderRadius: 5,
+                    borderWidth: 1,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(value);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Carregar menu componentizado
+        fetch('menu.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('menu-container').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(value);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
