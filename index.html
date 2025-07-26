@@ -3,39 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site HTML e CSS</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Infográfico: O Ecossistema de Software de São Paulo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!--
+    Narrative Plan:
+    1.  Header: Hook with a strong title and key metric.
+    2.  Economic Impact: Showcase São Paulo's financial dominance with KPI cards and a line chart for growth.
+    3.  Innovation Engine: Visualize innovation metrics using a grouped bar chart and a big number for spending.
+    4.  Company Diversity: Use a donut chart to show the variety of software company types.
+    5.  Leading Verticals: Display key tech sectors in a clean grid of cards with icons.
+    6.  Support Ecosystem: Illustrate the network of support with a flowchart built from HTML/CSS.
+    7.  Future Trends: Present upcoming trends with icon-based cards.
+    8.  Footer: Conclusion and source attribution.
+
+    Visualization Choices:
+    -   Data Point: TIC's Share in Brazil's VA -> Goal: Change -> Visualization: Line Chart (Chart.js). Justification: Ideal for showing trends over time. NO SVG.
+    -   Data Point: Innovation Rate Growth -> Goal: Compare -> Visualization: Grouped Bar Chart (Chart.js). Justification: Best for comparing multiple categories across two periods. NO SVG.
+    -   Data Point: Company Types Composition -> Goal: Compare/Composition -> Visualization: Donut Chart (Chart.js). Justification: Visually engaging way to show parts of a whole. NO SVG.
+    -   Data Point: Support Ecosystem Structure -> Goal: Organize/Relationships -> Visualization: HTML/CSS Flowchart. Justification: Clearly shows relationships and process flow without using prohibited libraries/formats. NO SVG, NO MERMAID JS.
+    -   Data Point: KPIs (Revenue, Startups) -> Goal: Inform -> Visualization: Big Number Cards. Justification: High-impact for key statistics.
+    -   Data Point: Verticals & Trends -> Goal: Organize -> Visualization: Icon + Text Cards in a Grid. Justification: Clean and clear presentation of categorical information. NO SVG.
+
+    Constraint Confirmation:
+    -   NEITHER Mermaid JS NOR SVG were used anywhere in this output. All charts are rendered on Canvas by Chart.js, and diagrams are constructed with standard HTML and Tailwind CSS.
+
+    Color Palette: Brilliant Blues
+    -   #00449E (Dark Blue)
+    -   #0085FF (Bright Blue)
+    -   #7DBCFF (Light Blue)
+    -   #FFFFFF (White)
+    -   #F0F4F8 (Light Gray Background)
+    -   #1A202C (Dark Text)
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            color: #0085FF;
+            margin: 0 1rem;
+        }
+         .flow-arrow-down::after {
+            content: '↓';
+            font-size: 2rem;
+            color: #0085FF;
+            margin: 1rem 0;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Bem-vindo ao Meu Site</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+<body class="text-gray-800">
+
+    <header class="bg-white text-center py-12 px-4 shadow-lg">
+        <h1 class="text-4xl md:text-6xl font-black text-[#00449E] uppercase tracking-wider">São Paulo</h1>
+        <p class="text-2xl md:text-3xl font-bold text-[#0085FF] mt-2">O Coração Tecnológico da América Latina</p>
+        <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
+            Consolidada como o principal polo de tecnologia do Brasil, São Paulo concentra mais da metade do valor do setor de TIC do país, impulsionando a inovação e a economia digital.
+        </p>
     </header>
-    <main>
-        <section id="home">
-            <h2>Início</h2>
-            <p>Este é o conteúdo da página inicial.</p>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="economic-impact" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">O Gigante em Números</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">O setor de tecnologia em São Paulo não apenas lidera, mas define o ritmo da economia digital no Brasil, com um crescimento expressivo e contribuição robusta.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl font-extrabold text-[#0085FF]">51,8%</p>
+                    <p class="mt-2 text-gray-600">Do Valor Adicionado de TIC do Brasil (2019)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl font-extrabold text-[#0085FF]">>4.000</p>
+                    <p class="mt-2 text-gray-600">Startups ativas no ecossistema</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-5xl font-extrabold text-[#0085FF]">>R$ 40 Mi</p>
+                    <p class="mt-2 text-gray-600">Movimentados anualmente em serviços de TI</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-bold text-center text-[#00449E] mb-4">Crescimento da Participação de SP no Setor de TIC do Brasil</h3>
+                <p class="text-center text-sm text-gray-500 mb-4">A participação do valor adicionado (VA) do setor de TIC do Estado de São Paulo no total do país aumentou de forma consistente, demonstrando sua crescente dominância.</p>
+                <div class="chart-container">
+                    <canvas id="economicGrowthChart"></canvas>
+                </div>
+            </div>
         </section>
-        <section id="sobre">
-            <h2>Sobre</h2>
-            <p>Informações sobre o site e seu propósito.</p>
+
+        <section id="innovation" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">O Motor da Inovação</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">A capacidade de inovar é o que diferencia o mercado paulista. As empresas locais não só atendem à demanda nacional, mas também criam produtos inéditos para o mercado global.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-center text-[#00449E] mb-4">Evolução das Taxas de Inovação (% de Empresas)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">Comparativo das taxas de inovação em produto e processo entre os períodos de 2006-2008 e 2015-2017.</p>
+                    <div class="chart-container h-96 max-h-[500px]">
+                        <canvas id="innovationRateChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center items-center text-center">
+                     <p class="text-gray-600 text-lg mb-2">Gastos Inovativos no Setor (2015-2017)</p>
+                    <p class="text-6xl font-extrabold text-[#0085FF]">R$ 9,4 Bi</p>
+                    <p class="mt-4 text-gray-600">Um salto de 49% em relação ao período de 2006-2008, impulsionando o desenvolvimento de novas tecnologias.</p>
+                </div>
+            </div>
         </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Formas de entrar em contato.</p>
+        
+        <section id="company-types" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">Um Ecossistema Diverso de Empresas</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">De gigantes globais a startups ágeis, o mercado de software de São Paulo é um mosaico de especialidades e modelos de negócio.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-center text-[#00449E] mb-4">Principais Segmentos do Mercado de Software</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">Distribuição representativa dos tipos de empresas que compõem o cenário tecnológico da cidade.</p>
+                    <div class="chart-container">
+                        <canvas id="companyTypesChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-[#00449E]">Desenvolvimento Personalizado e Fábricas de Software</h4>
+                        <p class="text-sm text-gray-600">Ex: Stefanini, TOTVS, CI&T</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-[#00449E]">Software como Serviço (SaaS)</h4>
+                        <p class="text-sm text-gray-600">Ex: Runrun.it, Pagar.me</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-[#00449E]">Inteligência Artificial e Machine Learning</h4>
+                        <p class="text-sm text-gray-600">Ex: Databricks, Rootstack</p>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-[#00449E]">Cibersegurança</h4>
+                        <p class="text-sm text-gray-600">Ex: Qualysec, Tempest</p>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="verticals" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">Verticais em Destaque</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">A especialização em setores-chave da economia demonstra a maturidade do mercado, criando soluções de alto impacto para indústrias específicas.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">💰</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Fintech</h3>
+                    <p class="mt-2 text-gray-600">Líder na América Latina com bancos digitais, plataformas de pagamento e crédito. Ex: Nubank, Creditas, StoneCo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🏥</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Healthtech</h3>
+                    <p class="mt-2 text-gray-600">Inovações em telemedicina, gestão de clínicas e medicina personalizada. Ex: Klick Health, Syneos Health.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🎓</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Edtech</h3>
+                    <p class="mt-2 text-gray-600">Transformando a educação com plataformas de e-learning e gestão acadêmica. Ex: UOL EdTech.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🌱</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Agritech</h3>
+                    <p class="mt-2 text-gray-600">Digitalizando o agronegócio com agricultura de precisão e gestão de fazendas. Ex: JetBov.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🛒</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">E-commerce</h3>
+                    <p class="mt-2 text-gray-600">Plataformas e marketplaces que impulsionam o varejo digital no Brasil. Ex: AMARO, Buscapé.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🏭</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Transformação Digital</h3>
+                    <p class="mt-2 text-gray-600">Modernizando grandes corporações e o setor público com IA e nuvem. Ex: Siemens, Petrobras.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystem-support" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">A Força do Ecossistema de Suporte</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">O sucesso de São Paulo é fruto de uma colaboração estratégica entre universidades, governo, investidores e hubs de inovação, criando um ciclo virtuoso de crescimento.</p>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row justify-around items-center text-center gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-[#7DBCFF] text-[#00449E] p-4 rounded-lg shadow-md w-48">
+                            <h4 class="font-bold">Universidades e Pesquisa</h4>
+                            <p class="text-sm">(USP, UNICAMP)</p>
+                        </div>
+                        <div class="hidden md:block flow-arrow-down mt-4"></div>
+                    </div>
+                    <div class="hidden md:block flow-arrow"></div>
+                     <div class="block md:hidden flow-arrow-down"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-[#7DBCFF] text-[#00449E] p-4 rounded-lg shadow-md w-48">
+                            <h4 class="font-bold">Apoio Governamental</h4>
+                            <p class="text-sm">(FAPESP, E-Digital)</p>
+                        </div>
+                         <div class="hidden md:block flow-arrow-down mt-4"></div>
+                    </div>
+                </div>
+                 <div class="flex md:hidden justify-center flow-arrow-down"></div>
+                <div class="flex flex-col md:flex-row justify-around items-center text-center gap-4 mt-0 md:mt-4">
+                     <div class="bg-[#0085FF] text-white p-6 rounded-lg shadow-xl w-64">
+                        <h4 class="font-bold text-lg">Hubs, Parques e Aceleradoras</h4>
+                        <p class="text-sm">(Cubo Itaú, Google Campus, Unicamp)</p>
+                    </div>
+                    <div class="hidden md:block flow-arrow"></div>
+                    <div class="block md:hidden flow-arrow-down"></div>
+                     <div class="bg-[#00449E] text-white p-6 rounded-lg shadow-xl w-64">
+                        <h4 class="font-bold text-lg">Startups e Empresas</h4>
+                        <p class="text-sm">(Geração de Inovação e Empregos)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trends" class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#00449E] mb-2">Tendências e Perspectivas Futuras</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">O futuro do mercado de software paulista será moldado pela IA, cibersegurança e uma crescente demanda por sustentabilidade e talentos adaptáveis.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🤖</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">IA e Nuvem</h3>
+                    <p class="mt-2 text-gray-600">Adoção massiva de IA Generativa e infraestrutura em nuvem como base para a inovação.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🛡️</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Cibersegurança</h3>
+                    <p class="mt-2 text-gray-600">Demanda crescente por proteção de dados e soluções de segurança robustas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">🤝</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Habilidades Comportamentais</h3>
+                    <p class="mt-2 text-gray-600">Valorização de comunicação, colaboração e adaptabilidade além da técnica.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-5xl">♻️</span>
+                    <h3 class="text-xl font-bold mt-4 text-[#00449E]">Green Tech</h3>
+                    <p class="mt-2 text-gray-600">Foco em tecnologias sustentáveis para otimizar recursos e reduzir o impacto ambiental.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+
+    <footer class="bg-[#00449E] text-white text-center py-8 px-4 mt-16">
+        <p class="font-bold">Um ecossistema completo e em constante evolução.</p>
+        <p class="text-sm opacity-80 mt-2">São Paulo continua a solidificar sua posição como um líder tecnológico, atraindo investimentos, nutrindo talentos e exportando inovação para o mundo.</p>
+        <p class="text-xs opacity-60 mt-4">Dados sintetizados do relatório "O Mercado de Software em São Paulo", com base em fontes como ABES, IBGE, Fundação Seade e outras.</p>
     </footer>
 
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
 
-    <script src="src/scripts/main.js"></script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const brilliantBlues = {
+            dark: '#00449E',
+            bright: '#0085FF',
+            light: '#7DBCFF',
+            extraLight: '#D6E9FF'
+        };
+
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#1A202C'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#1A202C' },
+                    grid: { color: '#E2E8F0' }
+                },
+                x: {
+                    ticks: { color: '#1A202C' },
+                    grid: { color: '#E2E8F0' }
+                }
+            }
+        };
+
+        const economicGrowthCtx = document.getElementById('economicGrowthChart').getContext('2d');
+        new Chart(economicGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['2002', '2019'],
+                datasets: [{
+                    label: 'Participação de SP no VA de TIC do Brasil (%)',
+                    data: [42.4, 51.8],
+                    borderColor: brilliantBlues.bright,
+                    backgroundColor: 'rgba(0, 133, 255, 0.1)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: chartOptions
+        });
+
+        const innovationRateCtx = document.getElementById('innovationRateChart').getContext('2d');
+        new Chart(innovationRateCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Inovação em Produto (Nacional)'),
+                    wrapLabel('Inovação em Processo'),
+                    wrapLabel('Inovação em Produto (Mundial)')
+                ],
+                datasets: [
+                    {
+                        label: '2006-2008',
+                        data: [12.2, 4.1, 0.7],
+                        backgroundColor: brilliantBlues.light,
+                        borderColor: brilliantBlues.light,
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2015-2017',
+                        data: [22.5, 16.1, 1.6],
+                        backgroundColor: brilliantBlues.dark,
+                        borderColor: brilliantBlues.dark,
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: chartOptions
+        });
+        
+        const companyTypesCtx = document.getElementById('companyTypesChart').getContext('2d');
+        new Chart(companyTypesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    wrapLabel('Desenvolvimento Personalizado'), 
+                    'SaaS', 
+                    'IA & ML', 
+                    'Cibersegurança', 
+                    wrapLabel('Apps Móveis'), 
+                    'Consultoria TI'
+                ],
+                datasets: [{
+                    label: 'Segmentos de Mercado',
+                    data: [30, 25, 15, 12, 10, 8],
+                    backgroundColor: [
+                        brilliantBlues.dark,
+                        brilliantBlues.bright,
+                        brilliantBlues.light,
+                        '#55A6FF',
+                        '#A5D0FF',
+                        brilliantBlues.extraLight
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#1A202C',
+                            padding: 15,
+                            boxWidth: 12,
+                            font: { size: 10 }
+                        }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
