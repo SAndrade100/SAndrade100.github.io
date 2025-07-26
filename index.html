@@ -3,292 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pitch: Por Que Investir em IA Agora?</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #1f2937;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-        @media (max-width: 768px) {
-            .chart-container {
-                height: 300px;
-            }
-        }
-        .stat-card {
-            background-color: #0d47a1;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            text-align: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .flow-step {
-            display: flex;
-            align-items: flex-start;
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            margin-bottom: 1rem;
-            border-left: 5px solid;
-        }
-        .flow-icon {
-            flex-shrink: 0;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-right: 1.5rem;
-        }
-    </style>
+    <title>Meu Site HTML e CSS</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body class="antialiased">
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Início</h2>
+            <p>Este é o conteúdo da página inicial.</p>
+        </section>
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>Informações sobre o site e seu propósito.</p>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Formas de entrar em contato.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+    </footer>
 
-    <div class="container mx-auto p-4 md:p-8">
 
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#ff6f00] to-[#0d47a1]">IA: O Investimento Mais Inteligente do Seu Negócio</h1>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">Desvende o poder da Inteligência Artificial e descubra como ela pode impulsionar seu lucro e eficiência, mesmo que você não seja um especialista em tecnologia.</p>
-        </header>
-
-        <main class="space-y-20">
-            
-            <section id="por-que-ia">
-                <h2 class="text-3xl font-bold text-center mb-2">1. Por Que a IA Não é Mais Opcional?</h2>
-                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-10">A Inteligência Artificial está transformando o mundo dos negócios em uma velocidade sem precedentes. Quem não investe agora, corre o risco de ficar para trás.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="stat-card" style="background-color: #ff6f00;">
-                        <p class="text-6xl font-black">13,9%</p>
-                        <p class="mt-2 text-lg font-semibold">Crescimento do Mercado de TI (Impulsionado por IA)</p>
-                    </div>
-                    <div class="stat-card" style="background-color: #ff8f00;">
-                        <p class="text-6xl font-black">50%+</p>
-                        <p class="mt-2 text-lg font-semibold">Investimentos em Software e Serviços (onde a IA vive)</p>
-                    </div>
-                    <div class="stat-card" style="background-color: #ffaf00;">
-                        <p class="text-6xl font-black">Recorde</p>
-                        <p class="mt-2 text-lg font-semibold">Lucro de Pequenas Empresas (com potencial de IA)</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="ia-na-pratica">
-                <h2 class="text-3xl font-bold text-center mb-2">2. IA na Prática: Como Ela Transforma Seu Negócio?</h2>
-                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-10">A IA não é só para grandes empresas. Ela já está disponível em ferramentas que resolvem problemas reais e geram resultados para negócios de todos os tamanhos.</p>
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold mb-4 text-center">Benefícios Tangíveis da IA</h3>
-                        <div class="space-y-4 text-lg">
-                            <div class="flex items-center"><span class="text-2xl mr-4">⏱️</span><div> <b>Automação de Tarefas Repetitivas</b>: Libere sua equipe para o que realmente importa.</div></div>
-                            <div class="flex items-center"><span class="text-2xl mr-4">📊</span><div> <b>Decisões Mais Inteligentes</b>: Analise dados e preveja tendências com precisão.</div></div>
-                            <div class="flex items-center"><span class="text-2xl mr-4">🗣️</span><div> <b>Atendimento ao Cliente Aprimorado</b>: Chatbots e assistentes virtuais 24/7.</div></div>
-                            <div class="flex items-center"><span class="text-2xl mr-4">💡</span><div> <b>Inovação e Novos Produtos</b>: Crie e teste ideias mais rapidamente.</div></div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold text-center mb-4">O Impacto da IA na Eficiência Operacional</h3>
-                        <p class="text-center text-gray-600 mb-4">Veja como a IA pode otimizar seus processos, reduzindo custos e aumentando a produtividade.</p>
-                        <div class="chart-container">
-                            <canvas id="iaImpactChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="retorno-investimento">
-                <h2 class="text-3xl font-bold text-center mb-2">3. O Retorno do Seu Investimento em IA</h2>
-                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-10">Investir em IA não é um custo, é um acelerador de resultados. Veja como ela se traduz em mais lucro para o seu negócio.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold text-center mb-4">Potencial de Ganho com IA</h3>
-                        <p class="text-center text-gray-600 mb-4">Empresas que adotam IA relatam ganhos significativos em diversas áreas.</p>
-                        <div class="chart-container h-80 md:h-96">
-                            <canvas id="roiIaChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#0d47a1]">
-                            <h4 class="font-bold text-xl">💰 Redução de Custos</h4>
-                            <p class="text-gray-600 mt-1">Automatize tarefas, otimize estoques e preveja manutenções para economizar.</p>
-                        </div>
-                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#1e88e5]">
-                            <h4 class="font-bold text-xl">📈 Aumento de Receitas</h4>
-                            <p class="text-gray-600 mt-1">Personalize ofertas, otimize vendas e identifique novas oportunidades de mercado.</p>
-                        </div>
-                        <div class="p-4 bg-white rounded-lg shadow-md border-l-4 border-[#42a5f5]">
-                            <h4 class="font-bold text-xl">⚡ Eficiência Operacional</h4>
-                            <p class="text-gray-600 mt-1">Faça mais com menos recursos, agilizando processos e melhorando a qualidade.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="proximos-passos">
-                <h2 class="text-3xl font-bold text-center mb-2">4. Seus Próximos Passos: Comece a Investir em IA Hoje!</h2>
-                <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-10">Não é preciso ser um gigante da tecnologia para começar. Pequenos passos inteligentes podem gerar grandes resultados.</p>
-                <div class="space-y-6 max-w-4xl mx-auto">
-                    <div class="flow-step border-l-[#ff6f00]">
-                        <div class="flow-icon bg-[#ff6f00]">1</div>
-                        <div>
-                            <h4 class="font-bold text-xl">Identifique um Problema Simples</h4>
-                            <p class="text-gray-600">Comece automatizando uma tarefa repetitiva ou analisando um pequeno conjunto de dados.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step border-l-[#ff8f00]">
-                        <div class="flow-icon bg-[#ff8f00]">2</div>
-                        <div>
-                            <h4 class="font-bold text-xl">Busque Ferramentas Acessíveis</h4>
-                            <p class="text-gray-600">Muitas soluções de IA já vêm prontas para usar, integradas em softwares que você já conhece.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step border-l-[#ffaf00]">
-                        <div class="flow-icon bg-[#ffaf00]">3</div>
-                        <div>
-                            <h4 class="font-bold text-xl">Capacite Sua Equipe</h4>
-                            <p class="text-gray-600">Invista em cursos básicos de IA para que todos entendam e usem as novas ferramentas.</p>
-                        </div>
-                    </div>
-                    <div class="flow-step border-l-[#0d47a1]">
-                        <div class="flow-icon bg-[#0d47a1]">4</div>
-                        <div>
-                            <h4 class="font-bold text-xl">Procure um Especialista</h4>
-                            <p class="text-gray-600">Consultores e empresas de TI podem te guiar nos primeiros passos e na escolha certa.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="text-center mt-20 pt-10 border-t border-gray-300">
-            <h3 class="text-3xl md:text-4xl font-black text-gray-900">Não Fique Para Trás!</h3>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">A Inteligência Artificial é a chave para a competitividade e o crescimento sustentável do seu negócio. Comece sua jornada hoje e colha os frutos de um futuro mais inteligente e lucrativo.</p>
-        </footer>
-
-    </div>
-
-    <script>
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-              return label.join(' ');
-            }
-            return label;
-        };
-
-        const colors = {
-            blue1: '#0d47a1',
-            blue2: '#1e88e5',
-            blue3: '#42a5f5',
-            orange1: '#ff6f00',
-            orange2: '#ff8f00',
-            orange3: '#ffaf00',
-        };
-
-        const iaImpactCtx = document.getElementById('iaImpactChart').getContext('2d');
-        new Chart(iaImpactCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Redução de Custos', 'Aumento de Produtividade', 'Melhora na Tomada de Decisão', 'Otimização de Processos'],
-                datasets: [{
-                    label: 'Impacto da IA (%)',
-                    data: [25, 30, 20, 35],
-                    backgroundColor: [colors.blue1, colors.blue2, colors.blue3, colors.orange1],
-                    borderRadius: 4,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback },
-                        backgroundColor: '#1f2937',
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 12 },
-                        padding: 10,
-                        cornerRadius: 4,
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: { display: true, text: 'Percentual de Melhoria (%)' },
-                        grid: { display: false },
-                        ticks: { font: { size: 12 } }
-                    },
-                    y: {
-                        grid: { display: false },
-                        ticks: { font: { size: 12 } }
-                    }
-                }
-            }
-        });
-
-        const roiIaCtx = document.getElementById('roiIaChart').getContext('2d');
-        new Chart(roiIaCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Economia de Tempo', 'Redução de Erros', 'Aumento de Vendas', 'Inovação'],
-                datasets: [{
-                    data: [30, 20, 35, 15],
-                    backgroundColor: [colors.orange1, colors.blue2, colors.orange3, colors.blue1],
-                    borderColor: '#f0f4f8',
-                    borderWidth: 4,
-                    hoverOffset: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '60%',
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            font: { size: 12 },
-                            padding: 20,
-                        }
-                    },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback },
-                        backgroundColor: '#1f2937',
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 12 },
-                        padding: 10,
-                        cornerRadius: 4,
-                    }
-                }
-            }
-        });
-    </script>
+    <script src="src/scripts/main.js"></script>
 </body>
 </html>
